@@ -1,0 +1,34 @@
+Temp/
+Builds/
+Obj/
+UnityGenerated/
+Library/
+Nongame/
+Assets/StrumpyShaderEditor/
+Assets/TextMesh Pro/Examples/
+Assets/TextMesh Pro/User Guide/
+
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+testSave.txt
+test.txt
+GameSettings.txt
+GameSettings.dat
+SortTheCourt_save.dat
