@@ -7,7 +7,7 @@ public class HandShipController : MonoBehaviour
 {
 
 	[SerializeField]
-	private GameObject projectileToSpawn;
+	private ProjectileController projectileToSpawn;
 	[SerializeField]
 	private Transform spawnLocation;
 
@@ -20,14 +20,28 @@ public class HandShipController : MonoBehaviour
 
 	private void Update()
 	{
+#if UNITY_EDITOR
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			Fire();
+		}
+#else
 		var device = SteamVR_Controller.Input((int)controller.index);
 		
 		if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
 		{
-			GameObject projectile = Instantiate(projectileToSpawn);
-			projectile.transform.position = spawnLocation.position;
-			projectile.transform.rotation = spawnLocation.rotation;
+			Fire();
 		}
+#endif
+	}
+
+	private void Fire()
+	{
+		ProjectileController projectile = Instantiate<ProjectileController>(projectileToSpawn);
+		projectile.transform.position = spawnLocation.position;
+		projectile.transform.rotation = spawnLocation.rotation;
+
+		projectile.Launch();
 	}
 
 }
