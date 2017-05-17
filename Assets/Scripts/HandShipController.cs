@@ -28,10 +28,14 @@ public class HandShipController : MonoBehaviour
 #else
 		var device = SteamVR_Controller.Input((int)controller.index);
 		
-		if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+		if (device != null)
 		{
-			Fire();
+			if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+			{
+				Fire();
+			}
 		}
+		
 #endif
 	}
 
