@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 4263475309633466}
   - component: {fileID: 20985002220472018}
   - component: {fileID: 124959267143601858}
-  - component: {fileID: 114893958753962218}
+  - component: {fileID: 114412389178897936}
+  - component: {fileID: 114149350385906760}
   m_Layer: 0
   m_Name: Camera (eye)
   m_TagString: MainCamera
@@ -610,6 +611,20 @@ MonoBehaviour:
   projectileToSpawn: {fileID: 114728730664796358, guid: 399e4e8433e4dda44be3e22757694aa2,
     type: 2}
   spawnLocation: {fileID: 4797015759932898}
+--- !u!114 &114149350385906760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019454044675386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 4212797022215076}
+  _ears: {fileID: 4490625908581090}
+  wireframe: 0
 --- !u!114 &114171853971282668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -679,6 +694,17 @@ MonoBehaviour:
   index: -1
   origin: {fileID: 0}
   isValid: 0
+--- !u!114 &114412389178897936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019454044675386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61cd59d8f02e454186a61a5f55c21b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114430964628577274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -719,20 +745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrcam: {fileID: 0}
---- !u!114 &114893958753962218
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019454044675386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 4212797022215076}
-  _ears: {fileID: 4490625908581090}
-  wireframe: 0
 --- !u!124 &124959267143601858
 Behaviour:
   m_ObjectHideFlags: 1
