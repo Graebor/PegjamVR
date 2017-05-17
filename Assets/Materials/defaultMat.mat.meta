@@ -1,15 +1,14 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
-guid: fe57c6ad36cd4464cb0c27e3c2785a97
-folderAsset: yes
+guid: 412d35587f38142ad88ea643b7ce6d3d
 timeCreated: 1494990205
 =======
-guid: 3ed208c4578c9db438792d2bdbd12544
-folderAsset: yes
+guid: 51096a5107d6197468f99329147ed792
 timeCreated: 1494990365
 >>>>>>> a51073dc21a7d55e2b5c99742b727579e4c587fe
 licenseType: Free
-DefaultImporter:
+NativeFormatImporter:
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
