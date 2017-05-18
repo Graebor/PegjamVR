@@ -39,7 +39,7 @@ public class DamageableObject : MonoBehaviour
 		//-1 hits to kill means it is invincible
 		if (hitsToKill > -1)
 		{
-			hitsTaken++;
+			hitsTaken += hitBy.Damage;
 			if (hitsTaken >= hitsToKill)
 			{
 				Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);

@@ -7,6 +7,9 @@ public class ProjectileController : MonoBehaviour
 
 	[SerializeField]
 	private float moveSpeed = 1f;
+	[SerializeField]
+	private int damage = 1;
+	public int Damage { get { return damage; } }
 
 	[SerializeField]
 	private bool isVRPlayer = true;

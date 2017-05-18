@@ -9,7 +9,14 @@ public class HandShipController : MonoBehaviour
 	[SerializeField]
 	private ProjectileController projectileToSpawn;
 	[SerializeField]
+	private ProjectileController bigProjectile;
+	[SerializeField]
 	private Transform spawnLocation;
+
+	[SerializeField]
+	private float bigBulletCooldownLength = 1f;
+
+	private float bigBulletCooldown = 0f;
 
 	private SteamVR_TrackedObject controller;
 
@@ -20,6 +27,8 @@ public class HandShipController : MonoBehaviour
 
 	private void Update()
 	{
+		if (bigBulletCooldown > 0f) { bigBulletCooldown -= Time.deltaTime; }
+
 #if UNITY_EDITOR
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
@@ -41,9 +50,12 @@ public class HandShipController : MonoBehaviour
 
 	private void Fire()
 	{
-		ProjectileController projectile = Instantiate<ProjectileController>(projectileToSpawn);
-		projectile.transform.position = spawnLocation.position;
-		projectile.transform.rotation = spawnLocation.rotation;
+		ProjectileController projectile = Instantiate<ProjectileController>(
+			bigBulletCooldown <= 0f ? bigProjectile : projectileToSpawn,
+			spawnLocation.position,
+			spawnLocation.rotation);
+
+		bigBulletCooldown = bigBulletCooldownLength;
 	}
 
 }
