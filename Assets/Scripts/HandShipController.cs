@@ -44,8 +44,6 @@ public class HandShipController : MonoBehaviour
 		ProjectileController projectile = Instantiate<ProjectileController>(projectileToSpawn);
 		projectile.transform.position = spawnLocation.position;
 		projectile.transform.rotation = spawnLocation.rotation;
-
-		projectile.Launch();
 	}
 
 }

@@ -6,27 +6,28 @@ public class ProjectileController : MonoBehaviour
 {
 
 	[SerializeField]
-	private Rigidbody rb;
-	[SerializeField]
-	private float launchForceAmount = 10f;
+	private float moveSpeed = 1f;
+
 	[SerializeField]
 	private bool isVRPlayer = true;
 	public bool IsVRPlayer { get { return isVRPlayer; } }
 
-	public void Launch()
-	{
-		rb.AddForce(transform.forward * launchForceAmount);
-	}
 
-	private void OnCollisionEnter(Collision collision)
+	private void Update()
 	{
-		DamageableObject dmg = collision.collider.gameObject.GetComponent<DamageableObject>();
-		if (dmg != null)
+		transform.position += (transform.forward * Time.deltaTime * moveSpeed);
+
+		RaycastHit hitInfo;
+		if (Physics.Raycast(transform.position, transform.forward, out hitInfo, moveSpeed * Time.deltaTime * 2f))
 		{
-			if (dmg.IsVRPlayer != isVRPlayer)
+			DamageableObject dmg = hitInfo.collider.gameObject.GetComponent<DamageableObject>();
+			if (dmg != null)
 			{
-				dmg.GetHit(this);
-				Destroy(this.gameObject);
+				if (dmg.IsVRPlayer != isVRPlayer)
+				{
+					dmg.GetHit(this);
+					Destroy(this.gameObject);
+				}
 			}
 		}
 	}
