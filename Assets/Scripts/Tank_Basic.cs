@@ -27,10 +27,22 @@ public class Tank_Basic : MonoBehaviour {
 
 	[SerializeField]
 	private ProjectileController projectileToSpawn;
+  [SerializeField]
+  private ProjectileController bigProjectile;
+
 	[SerializeField]
 	private Transform spawnLocation;
 
   [SerializeField] private GameObject shieldPrefab;
+
+  [Header("Fire Rates")]
+  public float fireTime = 0.1f;
+  [SerializeField] private float fireCooldown;
+
+  [SerializeField]
+  private float bigBulletCooldownLength = 1f;
+  [SerializeField]
+  private float bigBulletCooldown = 0f;
 	
 	void Update () {
       input = new Vector3(Input.GetAxisRaw("Horizontal_Tank" + _tankIndex), 0f, Input.GetAxisRaw("Vertical_Tank" + _tankIndex)) * inputSensitivity;
@@ -47,13 +59,19 @@ public class Tank_Basic : MonoBehaviour {
 
       transform.position += move * Time.deltaTime;
 
-      if(Input.GetButtonDown("Fire1_Tank" + _tankIndex)){
+      if (bigBulletCooldown > 0f) { bigBulletCooldown -= Time.deltaTime; }
+      if (fireCooldown > 0f) { fireCooldown -= Time.deltaTime; }
 
-			ProjectileController projectile = Instantiate<ProjectileController>(projectileToSpawn);
-			projectile.transform.position = spawnLocation.position;
-			projectile.transform.rotation = spawnLocation.rotation;
+      if(Input.GetButton("Fire1_Tank" + _tankIndex)){
+        if(fireCooldown <= 0f){
+         ProjectileController projectile = Instantiate<ProjectileController>(
+          bigBulletCooldown <= 0f ? bigProjectile : projectileToSpawn,
+          spawnLocation.position,
+          spawnLocation.rotation);
+          fireCooldown = fireTime;
+        }
 
-			//Debug.Log("Pew pew I am tank " + _tankIndex);
+       bigBulletCooldown = bigBulletCooldownLength;
       }
       if(Input.GetButtonDown("Fire2_Tank" + _tankIndex)){
         Instantiate(shieldPrefab, transform.position, shieldPrefab.transform.rotation);

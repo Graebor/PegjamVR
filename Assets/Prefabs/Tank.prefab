@@ -206,9 +206,15 @@ MonoBehaviour:
   decelSpeed: 16
   projectileToSpawn: {fileID: 114728730664796358, guid: cbe7f6e268bdc1344885f2268d22d242,
     type: 2}
+  bigProjectile: {fileID: 114728730664796358, guid: 596cd7c18a72c07438d7808e7478f331,
+    type: 2}
   spawnLocation: {fileID: 4068567135461236}
   shieldPrefab: {fileID: 1499716102193890, guid: 59438b866c7fd954ca24f9f442cc8048,
     type: 2}
+  fireTime: 0.1
+  fireCooldown: 0
+  bigBulletCooldownLength: 1
+  bigBulletCooldown: 0
 --- !u!114 &114384818008672062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,4 +233,5 @@ MonoBehaviour:
     type: 2}
   deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
     type: 2}
+  doShakeOnHit: 1
   persistentPrefabOnDeath: {fileID: 0}
