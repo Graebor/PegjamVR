@@ -7,7 +7,7 @@ using UnityEngine;
 public class CityGeneration : MonoBehaviour {
 
   [Header("The Current City")]
-  public List<Transform> currentCity;
+  //public List<Transform> currentCity; // need to be able to remove this 
 
   [Header("Prefab List Here")]
   public List<Transform> cityBlockPrefabs;
@@ -54,7 +54,7 @@ public class CityGeneration : MonoBehaviour {
 
         currentTempBlock.SetParent(parentTransform);
 
-        currentCity.Add(currentTempBlock);
+       // currentCity.Add(currentTempBlock);
       
         // update pointer
         currentSpawnLocation.z += blockSize;
@@ -70,7 +70,7 @@ public class CityGeneration : MonoBehaviour {
     maxDepth = cityBlocksCountDepth * blockSize;
 
     if( centerCity ){
-      parentTransform.Translate( maxWidth * -0.5f, maxDepth * -0.5f, 0);
+      parentTransform.Translate( maxWidth * -0.5f, 0, maxDepth * -0.5f );
     }
   
   }
