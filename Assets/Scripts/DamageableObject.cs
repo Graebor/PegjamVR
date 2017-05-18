@@ -26,16 +26,21 @@ public class DamageableObject : MonoBehaviour
 	{
 		Instantiate(hitEffectPrefab, hitBy.transform.position, hitBy.transform.rotation);
 
-		hitsTaken++;
-		if (hitsTaken >= hitsToKill)
+		//-1 hits to kill means it is invincible
+		if (hitsToKill > -1)
 		{
-			Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
-
-			if (destroyThisWhenKilled != null)
+			hitsTaken++;
+			if (hitsTaken >= hitsToKill)
 			{
-				Destroy(destroyThisWhenKilled);
+				Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+
+				if (destroyThisWhenKilled != null)
+				{
+					Destroy(destroyThisWhenKilled);
+				}
 			}
 		}
+		
 	}
 
 }
