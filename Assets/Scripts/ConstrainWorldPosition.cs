@@ -12,6 +12,8 @@ public class ConstrainWorldPosition : MonoBehaviour
 	private Vector3 minWorldPositionValues;
 	[SerializeField]
 	private Vector3 maxWorldPositionValues;
+	[SerializeField]
+	private float followSpeed;
 
 
 	private void Update()
@@ -22,7 +24,7 @@ public class ConstrainWorldPosition : MonoBehaviour
 		newPos.y = Mathf.Clamp(newPos.y, minWorldPositionValues.y, maxWorldPositionValues.y);
 		newPos.z = Mathf.Clamp(newPos.z, minWorldPositionValues.z, maxWorldPositionValues.z);
 
-		transform.position = newPos;
+		transform.position = Vector3.Lerp(transform.position, newPos, Time.deltaTime * followSpeed);
 	}
 
 }
