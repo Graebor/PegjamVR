@@ -25,6 +25,11 @@ public class Tank_Basic : MonoBehaviour {
   public float accelSpeed = 5f;
   public float decelSpeed = 8f;
 
+	[SerializeField]
+	private ProjectileController projectileToSpawn;
+	[SerializeField]
+	private Transform spawnLocation;
+
 
 	// Use this for initialization
 	void Start () {
@@ -47,7 +52,12 @@ public class Tank_Basic : MonoBehaviour {
       transform.position += move * Time.deltaTime;
 
       if(Input.GetButtonDown("Fire1_Tank" + _tankIndex)){
-        Debug.Log("Pew pew I am tank " + _tankIndex);
+
+			ProjectileController projectile = Instantiate<ProjectileController>(projectileToSpawn);
+			projectile.transform.position = spawnLocation.position;
+			projectile.transform.rotation = spawnLocation.rotation;
+
+			//Debug.Log("Pew pew I am tank " + _tankIndex);
       }
       if(Input.GetButton("Fire2_Tank" + _tankIndex)){
         Debug.Log("I am shielding........ also I am tank " + _tankIndex);

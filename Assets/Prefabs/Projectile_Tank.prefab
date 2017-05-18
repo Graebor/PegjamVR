@@ -38,8 +38,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4357711167806470}
   - component: {fileID: 114728730664796358}
+  - component: {fileID: 114151442970212740}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile_Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +124,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.4, z: 0.1}
   m_Center: {x: 0, y: 0.19999976, z: 0}
+--- !u!114 &114151442970212740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1898580926135848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78968edffc3e134429f83e30c57c46f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 6
 --- !u!114 &114728730664796358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,5 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ddee63af2b635499a4d030cfa704a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  isVRPlayer: 1
+  moveSpeed: 2
+  isVRPlayer: 0
