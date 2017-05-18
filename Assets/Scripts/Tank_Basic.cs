@@ -30,11 +30,7 @@ public class Tank_Basic : MonoBehaviour {
 	[SerializeField]
 	private Transform spawnLocation;
 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+  [SerializeField] private GameObject shieldPrefab;
 	
 	void Update () {
       input = new Vector3(Input.GetAxisRaw("Horizontal_Tank" + _tankIndex), 0f, Input.GetAxisRaw("Vertical_Tank" + _tankIndex)) * inputSensitivity;
@@ -59,8 +55,8 @@ public class Tank_Basic : MonoBehaviour {
 
 			//Debug.Log("Pew pew I am tank " + _tankIndex);
       }
-      if(Input.GetButton("Fire2_Tank" + _tankIndex)){
-        Debug.Log("I am shielding........ also I am tank " + _tankIndex);
+      if(Input.GetButtonDown("Fire2_Tank" + _tankIndex)){
+        Instantiate(shieldPrefab, transform.position, shieldPrefab.transform.rotation);
       }
 	}
   public Vector3 RoundToCardinal(Vector3 myVec){
