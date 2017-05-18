@@ -20,6 +20,8 @@ public class DamageableObject : MonoBehaviour
 	[SerializeField]
 	private GameObject deathEffectPrefab;
 
+	public GameObject persistentPrefabOnDeath;
+
 	private int hitsTaken = 0;
 
 	public void GetHit(ProjectileController hitBy)
@@ -33,11 +35,14 @@ public class DamageableObject : MonoBehaviour
 			if (hitsTaken >= hitsToKill)
 			{
 				Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+				if(persistentPrefabOnDeath)Instantiate(persistentPrefabOnDeath, transform.position, transform.rotation); //if there is one, spawn in
 
 				if (destroyThisWhenKilled != null)
 				{
 					Destroy(destroyThisWhenKilled);
 				}
+
+				Destroy(this);
 			}
 		}
 		
