@@ -20,6 +20,9 @@ public class DamageableObject : MonoBehaviour
 	[SerializeField]
 	private GameObject deathEffectPrefab;
 
+	[SerializeField]
+	private bool doShakeOnHit = true;
+
 	public GameObject persistentPrefabOnDeath;
 
 	private int hitsTaken = 0;
@@ -27,6 +30,11 @@ public class DamageableObject : MonoBehaviour
 	public void GetHit(ProjectileController hitBy)
 	{
 		Instantiate(hitEffectPrefab, hitBy.transform.position, hitBy.transform.rotation);
+
+		if (doShakeOnHit)
+		{
+			Camera.main.Shake();
+		}
 
 		//-1 hits to kill means it is invincible
 		if (hitsToKill > -1)

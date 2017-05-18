@@ -25,8 +25,6 @@ public class ProjectileController : MonoBehaviour
 			{
 				if (dmg.IsVRPlayer != isVRPlayer)
 				{
-					Camera.main.Shake();
-
 					dmg.GetHit(this);
 					Destroy(this.gameObject);
 				}
