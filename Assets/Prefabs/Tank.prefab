@@ -163,7 +163,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab97cb673467e4be98a2ea766af0f8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTank2: 0
-  inputDirection: {x: 0, y: 0}
-  isShootingActive: 0
-  isShieldingActive: 0
+  tankIndex: 0
+  input: {x: 0, y: 0, z: 0}
+  inputMag: 0
+  inputSensitivity: 1
+  pivot: {fileID: 4861965498036352}
+  look: {x: 0, y: 0, z: -1}
+  move: {x: 2.3874036e-10, y: 0, z: -0.000000007811085}
+  moveSpeed: 10
+  turnSpeed: 5
+  accelSpeed: 8
+  decelSpeed: 16
