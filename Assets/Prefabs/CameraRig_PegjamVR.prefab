@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 33307349173317028}
   - component: {fileID: 23722687545790878}
   - component: {fileID: 65028619272639016}
+  - component: {fileID: 114912211243973454}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -1264,6 +1265,7 @@ MonoBehaviour:
     type: 2}
   deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
     type: 2}
+  persistentPrefabOnDeath: {fileID: 0}
 --- !u!114 &114149350385906760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1346,11 +1348,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVRPlayer: 1
   hitsToKill: 10
-  destroyThisWhenKilled: {fileID: 1983213794669750}
+  destroyThisWhenKilled: {fileID: 1524230535840710}
   hitEffectPrefab: {fileID: 1711729450631798, guid: 0c78ec41bf446ca4bb28100e8dceb3b4,
     type: 2}
   deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
     type: 2}
+  persistentPrefabOnDeath: {fileID: 0}
 --- !u!114 &114392687217876326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1461,6 +1464,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredForwardVector: {x: 0, y: 0, z: 1}
   poseUpdater: {fileID: 114412389178897936}
+--- !u!114 &114912211243973454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227642141378066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea22b9f479c0904080181d26717c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVRPlayer: 1
+  hitsToKill: 10
+  destroyThisWhenKilled: {fileID: 1227642141378066}
+  hitEffectPrefab: {fileID: 1711729450631798, guid: 0c78ec41bf446ca4bb28100e8dceb3b4,
+    type: 2}
+  deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
+    type: 2}
+  persistentPrefabOnDeath: {fileID: 0}
 --- !u!124 &124959267143601858
 Behaviour:
   m_ObjectHideFlags: 1

@@ -41,6 +41,8 @@ public class DamageableObject : MonoBehaviour
 				{
 					Destroy(destroyThisWhenKilled);
 				}
+
+				Destroy(this);
 			}
 		}
 		
