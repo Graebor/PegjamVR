@@ -977,6 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desiredForwardVector: {x: 0, y: 0, z: 1}
+  poseUpdater: {fileID: 114412389178897936}
 --- !u!114 &114149350385906760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1123,6 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desiredForwardVector: {x: 0, y: 0, z: 1}
+  poseUpdater: {fileID: 114412389178897936}
 --- !u!124 &124959267143601858
 Behaviour:
   m_ObjectHideFlags: 1

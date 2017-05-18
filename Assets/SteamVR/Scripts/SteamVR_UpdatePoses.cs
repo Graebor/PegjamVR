@@ -10,6 +10,8 @@ using Valve.VR;
 [RequireComponent(typeof(Camera))]
 public class SteamVR_UpdatePoses : MonoBehaviour
 {
+	public event System.Action OnPosesUpdated;
+
 #if !(UNITY_5_6)
 	void Awake()
 	{
@@ -30,6 +32,11 @@ public class SteamVR_UpdatePoses : MonoBehaviour
 			compositor.GetLastPoses(render.poses, render.gamePoses);
 			SteamVR_Events.NewPoses.Send(render.poses);
 			SteamVR_Events.NewPosesApplied.Send();
+
+			if (OnPosesUpdated != null)
+			{
+				OnPosesUpdated();
+			}
 		}
 	}
 }
