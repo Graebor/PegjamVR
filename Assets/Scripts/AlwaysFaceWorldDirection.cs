@@ -9,7 +9,7 @@ public class AlwaysFaceWorldDirection : MonoBehaviour
 	private Vector3 desiredForwardVector = Vector3.forward;
 
 
-	private void LateUpdate()
+	private void Update()
 	{
 		transform.forward = desiredForwardVector.normalized;
 	}
