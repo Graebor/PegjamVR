@@ -142,4 +142,5 @@ MonoBehaviour:
   deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
     type: 2}
   doShakeOnHit: 1
-  persistentPrefabOnDeath: {fileID: 0}
+  persistentPrefabOnDeath: {fileID: 1755476581627316, guid: 44ec740399aa044929f603e82bd409a3,
+    type: 2}
