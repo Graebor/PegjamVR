@@ -45,8 +45,10 @@ public class Tank_Basic : MonoBehaviour {
   [SerializeField] private float shieldCooldownTime = 5f;
   [SerializeField] private float shieldCooldown = 0f;
 
-  public Transform chargeTransform;
+  [SerializeField] private Transform chargeTransform;
   public float chargeSize = 0.25f;
+  [SerializeField] private Transform shieldChargeTransform;
+  public float shieldChargeSize = 0.3f;
 
 	
 	void Update () {
@@ -70,6 +72,9 @@ public class Tank_Basic : MonoBehaviour {
 
       float currentBigBulletCharge = Mathf.Abs( (bigBulletCooldown / bigBulletCooldownLength) - 1f ) * chargeSize;
       chargeTransform.localScale = new Vector3( currentBigBulletCharge, currentBigBulletCharge, 1f );
+
+      float currentShieldCharge = Mathf.Abs( (shieldCooldown / shieldCooldownTime) - 1f ) * shieldChargeSize;
+      shieldChargeTransform.localScale = new Vector3( currentShieldCharge, currentShieldCharge, 1f );
 
       //bullets
       if(Input.GetButton("Fire1_Tank" + _tankIndex)){
