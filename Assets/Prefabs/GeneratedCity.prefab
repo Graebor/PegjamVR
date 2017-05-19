@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483962812275272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.23, y: 0, z: -0.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,10 +76,10 @@ MonoBehaviour:
   - {fileID: 4146299821215700, guid: 37735d992f63f4fa99b86d68f69942fa, type: 2}
   - {fileID: 4165641317298602, guid: a0ccd9fc758364d8aa43aa919f4e5b6e, type: 2}
   - {fileID: 4445858972558536, guid: fed867bf09ec442f3bf8cfa40fc83900, type: 2}
-  cityBlocksCountWidth: 10
-  cityBlocksCountDepth: 10
+  cityBlocksCountWidth: 6
+  cityBlocksCountDepth: 4
   blockSize: 0.5
   roadSize: 0
   generateOnStart: 1
-  centerCity: 1
-  parentTransform: {fileID: 0}
+  centerCity: 0
+  parentTransform: {fileID: 4889866120131434}
