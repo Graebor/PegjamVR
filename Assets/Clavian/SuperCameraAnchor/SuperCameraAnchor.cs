@@ -101,7 +101,9 @@ public class SuperCameraAnchor : MonoBehaviour {
 		#endif
 	}
 	void OnDisable(){
+#if UNITY_EDITOR
 		HideInspectorStuff(false);
+#endif
 	}
 	void FindCamera(){
 		if(cam == null){
@@ -156,7 +158,9 @@ public class SuperCameraAnchor : MonoBehaviour {
 			}
 			
 			RememberResolution();
+#if UNITY_EDITOR
 			HideInspectorStuff(true);
+#endif
 		}
 	}
 	#if UNITY_EDITOR
