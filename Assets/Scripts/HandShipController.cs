@@ -20,6 +20,10 @@ public class HandShipController : MonoBehaviour
 
 	private SteamVR_TrackedObject controller;
 
+	[Header("Fire Rates")]
+	public float fireTime = 0.1f;
+ 	[SerializeField] private float fireCooldown;
+
 	private void Awake()
 	{
 		controller = GetComponent<SteamVR_TrackedObject>();
@@ -27,6 +31,7 @@ public class HandShipController : MonoBehaviour
 
 	private void Update()
 	{
+		if (fireCooldown > 0f) { fireCooldown -= Time.deltaTime; }
 		if (bigBulletCooldown > 0f) { bigBulletCooldown -= Time.deltaTime; }
 
 #if UNITY_EDITOR
@@ -50,11 +55,14 @@ public class HandShipController : MonoBehaviour
 
 	private void Fire()
 	{
-		ProjectileController projectile = Instantiate<ProjectileController>(
-			bigBulletCooldown <= 0f ? bigProjectile : projectileToSpawn,
-			spawnLocation.position,
-			spawnLocation.rotation);
+		if(fireCooldown <= 0f){
+			ProjectileController projectile = Instantiate<ProjectileController>(
+				bigBulletCooldown <= 0f ? bigProjectile : projectileToSpawn,
+				spawnLocation.position,
+				spawnLocation.rotation);
 
+			fireCooldown = fireTime;
+		}
 		bigBulletCooldown = bigBulletCooldownLength;
 	}
 
