@@ -268,11 +268,13 @@ MonoBehaviour:
     type: 2}
   bigProjectile: {fileID: 114728730664796358, guid: 596cd7c18a72c07438d7808e7478f331,
     type: 2}
+  shootSound: {fileID: 8300000, guid: 01c244fa85cb647ba8044d0c045491d0, type: 3}
+  bigShootSound: {fileID: 8300000, guid: 938a14fb431384a3ab243a0551eac71b, type: 3}
   spawnLocation: {fileID: 4068567135461236}
   shieldPrefab: {fileID: 1499716102193890, guid: 59438b866c7fd954ca24f9f442cc8048,
     type: 2}
   fireTime: 0.1
-  fireCooldown: 0
+  fireCooldown: 0.1
   bigBulletCooldownLength: 1
   bigBulletCooldown: 0
   shieldCooldownTime: 5

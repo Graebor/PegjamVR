@@ -31,6 +31,11 @@ public class Tank_Basic : MonoBehaviour {
   private ProjectileController bigProjectile;
 
 	[SerializeField]
+	private AudioClip shootSound;
+	[SerializeField]
+	private AudioClip bigShootSound;
+
+	[SerializeField]
 	private Transform spawnLocation;
 
   [SerializeField] private GameObject shieldPrefab;
@@ -79,14 +84,22 @@ public class Tank_Basic : MonoBehaviour {
       //bullets
       if(Input.GetButton("Fire1_Tank" + _tankIndex)){
         if(fireCooldown <= 0f){
-         ProjectileController projectile = Instantiate<ProjectileController>(
-          bigBulletCooldown <= 0f ? bigProjectile : projectileToSpawn,
-          spawnLocation.position,
-          spawnLocation.rotation);
-          fireCooldown = fireTime;
-        }
+				bool isBigBullet = (bigBulletCooldown <= 0f);
 
-       bigBulletCooldown = bigBulletCooldownLength;
+				ProjectileController projectile = Instantiate<ProjectileController>(
+					isBigBullet ? bigProjectile : projectileToSpawn,
+					spawnLocation.position,
+					spawnLocation.rotation);
+
+				AudioManager.Instance.PlaySound3D(
+						isBigBullet ? bigShootSound : shootSound,
+						transform.position, 1f,
+						Random.Range(0.8f, 1.1f)
+					);
+
+				fireCooldown = fireTime;
+				bigBulletCooldown = bigBulletCooldownLength;
+			}
       }
       //shield
       if(Input.GetButton("Fire2_Tank" + _tankIndex)){
