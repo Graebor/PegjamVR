@@ -39,16 +39,14 @@ public class Tank_Basic : MonoBehaviour {
   public float fireTime = 0.1f;
   [SerializeField] private float fireCooldown;
 
-  [SerializeField]
-  private float bigBulletCooldownLength = 1f;
-  [SerializeField]
-  private float bigBulletCooldown = 0f;
+  [SerializeField] private float bigBulletCooldownLength = 1f;
+  [SerializeField] private float bigBulletCooldown = 0f;
 
-  [SerializeField]
-  private float shieldCooldownTime = 5f;
-  [SerializeField]
-  private float shieldCooldown = 0f;
+  [SerializeField] private float shieldCooldownTime = 5f;
+  [SerializeField] private float shieldCooldown = 0f;
 
+  public Transform chargeTransform;
+  public float chargeSize = 0.25f;
 
 	
 	void Update () {
@@ -70,6 +68,10 @@ public class Tank_Basic : MonoBehaviour {
       if (fireCooldown > 0f) { fireCooldown -= Time.deltaTime; }
       if (shieldCooldown > 0f) { shieldCooldown -= Time.deltaTime; }
 
+      float currentBigBulletCharge = Mathf.Abs( (bigBulletCooldown / bigBulletCooldownLength) - 1f ) * chargeSize;
+      chargeTransform.localScale = new Vector3( currentBigBulletCharge, currentBigBulletCharge, 1f );
+
+      //bullets
       if(Input.GetButton("Fire1_Tank" + _tankIndex)){
         if(fireCooldown <= 0f){
          ProjectileController projectile = Instantiate<ProjectileController>(
@@ -81,6 +83,7 @@ public class Tank_Basic : MonoBehaviour {
 
        bigBulletCooldown = bigBulletCooldownLength;
       }
+      //shield
       if(Input.GetButton("Fire2_Tank" + _tankIndex)){
         if(shieldCooldown <= 0f){
           Instantiate(shieldPrefab, transform.position, shieldPrefab.transform.rotation);
