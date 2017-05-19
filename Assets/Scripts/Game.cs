@@ -15,6 +15,9 @@ public class Game : MonoBehaviour
 	private VictoryTypes victoryType = VictoryTypes.DestroyTanks;
 
 	[SerializeField]
+	private AudioClip gameEndSound;
+
+	[SerializeField]
 	private DamageableObject[] objectsOnVRPlayer;
 	[SerializeField]
 	private DamageableObject[] objectsOnGroundPlayer;
@@ -61,6 +64,7 @@ public class Game : MonoBehaviour
 			if (!anyGroundPlayerExists)
 			{
 				gameIsRunning = false;
+				AudioManager.Instance.PlaySound2D(gameEndSound);
 				activateOnVRVictory.SetActive(true);
 			}
 			else
@@ -68,6 +72,7 @@ public class Game : MonoBehaviour
 				if (!anyVRPlayerExists)
 				{
 					gameIsRunning = false;
+					AudioManager.Instance.PlaySound2D(gameEndSound);
 					activateOnGroundVictory.SetActive(true);
 				}
 			}

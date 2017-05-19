@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryType: 0
+  gameEndSound: {fileID: 8300000, guid: dccda102341bf4cbb828e92f643843a3, type: 3}
   objectsOnVRPlayer:
   - {fileID: 0}
   - {fileID: 0}
