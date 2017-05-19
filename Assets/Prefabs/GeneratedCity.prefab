@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1483962812275272}
+  m_IsPrefabParent: 1
+--- !u!1 &1483962812275272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4889866120131434}
+  - component: {fileID: 114786766365124648}
+  m_Layer: 0
+  m_Name: GeneratedCity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4889866120131434
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1483962812275272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114786766365124648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1483962812275272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbabc5771e4b415d8b4dc01666dd0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cityBlockPrefabs:
+  - {fileID: 4209499848743132, guid: 1b54572deca6a465db2091ec75387596, type: 2}
+  - {fileID: 4571691416965610, guid: 0ec82690934dc438fb9672da4832232f, type: 2}
+  - {fileID: 4656391955176190, guid: 78e0aefc478e93f4191b29ac78fcd680, type: 2}
+  - {fileID: 4101012408278134, guid: 27a861ae7bc98a246a78569887253f62, type: 2}
+  - {fileID: 4980305239513568, guid: 96c5d20e086124147b5d063318b9b740, type: 2}
+  - {fileID: 4519695839479582, guid: 4ef45b6d787274dc7a2a4f5a2ec80a91, type: 2}
+  - {fileID: 4527488336991694, guid: 21e946481ca19460b99d35f245313075, type: 2}
+  - {fileID: 4109824997882476, guid: ec5cc782c2c4744a2a3cf6d9d0c5c032, type: 2}
+  - {fileID: 4051909751597156, guid: b0b4c1533644b4ff49309f7f2906d856, type: 2}
+  - {fileID: 4409238438807730, guid: f7c774c1e8dc043849209e993172627a, type: 2}
+  - {fileID: 4528820849209544, guid: 3c542ad26baef4518a1dde5e13fe0caf, type: 2}
+  - {fileID: 4848423054317458, guid: bba41197a866242e98e8aea82f7d61e6, type: 2}
+  - {fileID: 4450972115118336, guid: b1a249cf05c334765aaef44d9b7df925, type: 2}
+  - {fileID: 4946252358938396, guid: 906627420d26a4ae3ac83173a86f8700, type: 2}
+  - {fileID: 4199030898355446, guid: 6ad53b7e6599040109a05476880268ab, type: 2}
+  - {fileID: 4184274882109076, guid: 50ca0862f37e5451783d68dd72f28738, type: 2}
+  - {fileID: 4218846564184764, guid: 10a90cc0c1013430a9a074528fa6a757, type: 2}
+  - {fileID: 4988105294588904, guid: 383f29247556a4f5787f476a339b08fc, type: 2}
+  - {fileID: 4409085083322612, guid: 6db6b968e1689409da652a076d5e5033, type: 2}
+  - {fileID: 4445858972558536, guid: fed867bf09ec442f3bf8cfa40fc83900, type: 2}
+  - {fileID: 4785672385705950, guid: d9d1d7b99d99b45c9876e8845721887b, type: 2}
+  cityBlocksCountWidth: 10
+  cityBlocksCountDepth: 10
+  blockSize: 0.5
+  roadSize: 0
+  generateOnStart: 1
+  centerCity: 1
+  parentTransform: {fileID: 0}
