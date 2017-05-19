@@ -43,6 +43,13 @@ public class Tank_Basic : MonoBehaviour {
   private float bigBulletCooldownLength = 1f;
   [SerializeField]
   private float bigBulletCooldown = 0f;
+
+  [SerializeField]
+  private float shieldCooldownTime = 5f;
+  [SerializeField]
+  private float shieldCooldown = 0f;
+
+
 	
 	void Update () {
       input = new Vector3(Input.GetAxisRaw("Horizontal_Tank" + _tankIndex), 0f, Input.GetAxisRaw("Vertical_Tank" + _tankIndex)) * inputSensitivity;
@@ -61,6 +68,7 @@ public class Tank_Basic : MonoBehaviour {
 
       if (bigBulletCooldown > 0f) { bigBulletCooldown -= Time.deltaTime; }
       if (fireCooldown > 0f) { fireCooldown -= Time.deltaTime; }
+      if (shieldCooldown > 0f) { shieldCooldown -= Time.deltaTime; }
 
       if(Input.GetButton("Fire1_Tank" + _tankIndex)){
         if(fireCooldown <= 0f){
@@ -73,8 +81,12 @@ public class Tank_Basic : MonoBehaviour {
 
        bigBulletCooldown = bigBulletCooldownLength;
       }
-      if(Input.GetButtonDown("Fire2_Tank" + _tankIndex)){
-        Instantiate(shieldPrefab, transform.position, shieldPrefab.transform.rotation);
+      if(Input.GetButton("Fire2_Tank" + _tankIndex)){
+        if(shieldCooldown <= 0f){
+          Instantiate(shieldPrefab, transform.position, shieldPrefab.transform.rotation);
+
+          shieldCooldown = shieldCooldownTime;
+        }
       }
 	}
   public Vector3 RoundToCardinal(Vector3 myVec){
