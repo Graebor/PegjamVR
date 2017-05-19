@@ -34,6 +34,8 @@ public class Tank_Basic : MonoBehaviour {
 	private AudioClip shootSound;
 	[SerializeField]
 	private AudioClip bigShootSound;
+	[SerializeField]
+	private AudioClip shieldCreateSound;
 
 	[SerializeField]
 	private Transform spawnLocation;
@@ -105,7 +107,7 @@ public class Tank_Basic : MonoBehaviour {
       if(Input.GetButton("Fire2_Tank" + _tankIndex)){
         if(shieldCooldown <= 0f){
           Instantiate(shieldPrefab, transform.position, shieldPrefab.transform.rotation);
-
+				AudioManager.Instance.PlaySound3D(shieldCreateSound, transform.position, 1f, Random.Range(0.8f, 1.1f));
           shieldCooldown = shieldCooldownTime;
         }
       }
