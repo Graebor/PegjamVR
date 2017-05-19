@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class HandShipController : MonoBehaviour
 {
-
+	[SerializeField]
+	private DamageableObject hitbox;
 	[SerializeField]
 	private ProjectileController projectileToSpawn;
 	[SerializeField]
@@ -15,6 +16,11 @@ public class HandShipController : MonoBehaviour
 
 	[SerializeField]
 	private float bigBulletCooldownLength = 1f;
+
+	[SerializeField]
+	private AudioClip shootSound;
+	[SerializeField]
+	private AudioClip bigShootSound;
 
 	private float bigBulletCooldown = 0f;
 
@@ -31,11 +37,13 @@ public class HandShipController : MonoBehaviour
 
 	private void Update()
 	{
+		if (hitbox == null) { return; }
+
 		if (fireCooldown > 0f) { fireCooldown -= Time.deltaTime; }
 		if (bigBulletCooldown > 0f) { bigBulletCooldown -= Time.deltaTime; }
 
 #if UNITY_EDITOR
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKey(KeyCode.Space))
 		{
 			Fire();
 		}
@@ -44,7 +52,7 @@ public class HandShipController : MonoBehaviour
 		
 		if (device != null)
 		{
-			if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+			if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
 			{
 				Fire();
 			}
@@ -55,15 +63,24 @@ public class HandShipController : MonoBehaviour
 
 	private void Fire()
 	{
-		if(fireCooldown <= 0f){
-			ProjectileController projectile = Instantiate<ProjectileController>(
-				bigBulletCooldown <= 0f ? bigProjectile : projectileToSpawn,
-				spawnLocation.position,
-				spawnLocation.rotation);
+		if (fireCooldown <= 0f)
+		{
+			bool isBigBullet = (bigBulletCooldown <= 0f);
+
+		ProjectileController projectile = Instantiate<ProjectileController>(
+			isBigBullet ? bigProjectile : projectileToSpawn,
+			spawnLocation.position,
+			spawnLocation.rotation);
+
+		AudioManager.Instance.PlaySound3D(
+				isBigBullet ? bigShootSound : shootSound,
+				transform.position, 1f,
+				Random.Range(0.8f, 1.1f)
+			);
 
 			fireCooldown = fireTime;
+			bigBulletCooldown = bigBulletCooldownLength;
 		}
-		bigBulletCooldown = bigBulletCooldownLength;
 	}
 
 }

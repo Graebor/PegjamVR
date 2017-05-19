@@ -1231,12 +1231,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52f4d3ab282c054e90b93f5f407777a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitbox: {fileID: 114043890677313494}
   projectileToSpawn: {fileID: 114728730664796358, guid: 399e4e8433e4dda44be3e22757694aa2,
     type: 2}
   bigProjectile: {fileID: 114728730664796358, guid: e2cc049b6dfd3ae4a9210f3922ef3f4b,
     type: 2}
   spawnLocation: {fileID: 4797015759932898}
   bigBulletCooldownLength: 1
+  shootSound: {fileID: 8300000, guid: 01c244fa85cb647ba8044d0c045491d0, type: 3}
+  bigShootSound: {fileID: 8300000, guid: 938a14fb431384a3ab243a0551eac71b, type: 3}
+  fireTime: 0.1
+  fireCooldown: 0
 --- !u!114 &114035557786785660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1268,6 +1273,7 @@ MonoBehaviour:
     type: 2}
   deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
     type: 2}
+  customDieSound: {fileID: 8300000, guid: 9799d6aac72d64d409d8cd229f7d777a, type: 3}
   doShakeOnHit: 1
   persistentPrefabOnDeath: {fileID: 0}
 --- !u!114 &114149350385906760
@@ -1357,6 +1363,7 @@ MonoBehaviour:
     type: 2}
   deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
     type: 2}
+  customDieSound: {fileID: 8300000, guid: 9799d6aac72d64d409d8cd229f7d777a, type: 3}
   doShakeOnHit: 1
   persistentPrefabOnDeath: {fileID: 0}
 --- !u!114 &114392687217876326
@@ -1411,12 +1418,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52f4d3ab282c054e90b93f5f407777a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitbox: {fileID: 114271860624683362}
   projectileToSpawn: {fileID: 114728730664796358, guid: 399e4e8433e4dda44be3e22757694aa2,
     type: 2}
   bigProjectile: {fileID: 114728730664796358, guid: e2cc049b6dfd3ae4a9210f3922ef3f4b,
     type: 2}
   spawnLocation: {fileID: 4422979488190076}
   bigBulletCooldownLength: 1
+  shootSound: {fileID: 8300000, guid: 01c244fa85cb647ba8044d0c045491d0, type: 3}
+  bigShootSound: {fileID: 8300000, guid: 938a14fb431384a3ab243a0551eac71b, type: 3}
+  fireTime: 0.1
+  fireCooldown: 0
 --- !u!114 &114573223760820162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1490,6 +1502,7 @@ MonoBehaviour:
     type: 2}
   deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
     type: 2}
+  customDieSound: {fileID: 0}
   doShakeOnHit: 1
   persistentPrefabOnDeath: {fileID: 0}
 --- !u!124 &124959267143601858

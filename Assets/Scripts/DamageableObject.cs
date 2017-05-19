@@ -21,6 +21,9 @@ public class DamageableObject : MonoBehaviour
 	private GameObject deathEffectPrefab;
 
 	[SerializeField]
+	private AudioClip customDieSound;
+
+	[SerializeField]
 	private bool doShakeOnHit = true;
 
 	public GameObject persistentPrefabOnDeath;
@@ -36,6 +39,8 @@ public class DamageableObject : MonoBehaviour
 			Camera.main.Shake();
 		}
 
+		AudioManager.Instance.PlaySound3D("TankBullet", transform.position, 1f, Random.Range(0.8f, 1.2f));
+
 		//-1 hits to kill means it is invincible
 		if (hitsToKill > -1)
 		{
@@ -44,6 +49,15 @@ public class DamageableObject : MonoBehaviour
 			{
 				Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
 				if(persistentPrefabOnDeath)Instantiate(persistentPrefabOnDeath, transform.position, transform.rotation); //if there is one, spawn in
+
+				if (customDieSound != null)
+				{
+					AudioManager.Instance.PlaySound3D(customDieSound, transform.position, 1f, Random.Range(0.8f, 1.2f));
+				}
+				else
+				{
+					AudioManager.Instance.PlaySound3D("DestroyBuilding", transform.position, 1f, Random.Range(0.8f, 1.2f));
+				}
 
 				if (destroyThisWhenKilled != null)
 				{
