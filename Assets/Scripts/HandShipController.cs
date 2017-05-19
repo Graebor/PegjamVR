@@ -40,7 +40,7 @@ public class HandShipController : MonoBehaviour
 		if (bigBulletCooldown > 0f) { bigBulletCooldown -= Time.deltaTime; }
 
 #if UNITY_EDITOR
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKey(KeyCode.Space))
 		{
 			Fire();
 		}
@@ -49,7 +49,7 @@ public class HandShipController : MonoBehaviour
 		
 		if (device != null)
 		{
-			if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+			if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
 			{
 				Fire();
 			}
@@ -60,8 +60,9 @@ public class HandShipController : MonoBehaviour
 
 	private void Fire()
 	{
-<<<<<<< HEAD
-		bool isBigBullet = (bigBulletCooldown <= 0f);
+		if (fireCooldown <= 0f)
+		{
+			bool isBigBullet = (bigBulletCooldown <= 0f);
 
 		ProjectileController projectile = Instantiate<ProjectileController>(
 			isBigBullet ? bigProjectile : projectileToSpawn,
@@ -74,17 +75,9 @@ public class HandShipController : MonoBehaviour
 				Random.Range(0.8f, 1.1f)
 			);
 
-=======
-		if(fireCooldown <= 0f){
-			ProjectileController projectile = Instantiate<ProjectileController>(
-				bigBulletCooldown <= 0f ? bigProjectile : projectileToSpawn,
-				spawnLocation.position,
-				spawnLocation.rotation);
-
 			fireCooldown = fireTime;
+			bigBulletCooldown = bigBulletCooldownLength;
 		}
->>>>>>> 509808eee5292f3b8f61e37f0b0041db8d173d22
-		bigBulletCooldown = bigBulletCooldownLength;
 	}
 
 }
