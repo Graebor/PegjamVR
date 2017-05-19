@@ -301,6 +301,7 @@ MonoBehaviour:
     type: 2}
   deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
     type: 2}
+  customDieSound: {fileID: 8300000, guid: 9799d6aac72d64d409d8cd229f7d777a, type: 3}
   doShakeOnHit: 1
   persistentPrefabOnDeath: {fileID: 0}
 --- !u!212 &212051783896916722

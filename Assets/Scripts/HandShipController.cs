@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class HandShipController : MonoBehaviour
 {
-
+	[SerializeField]
+	private DamageableObject hitbox;
 	[SerializeField]
 	private ProjectileController projectileToSpawn;
 	[SerializeField]
@@ -36,6 +37,8 @@ public class HandShipController : MonoBehaviour
 
 	private void Update()
 	{
+		if (hitbox == null) { return; }
+
 		if (fireCooldown > 0f) { fireCooldown -= Time.deltaTime; }
 		if (bigBulletCooldown > 0f) { bigBulletCooldown -= Time.deltaTime; }
 
