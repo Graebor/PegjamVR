@@ -36,6 +36,8 @@ GameObject:
   - component: {fileID: 4662250158705102}
   - component: {fileID: 33723136456807686}
   - component: {fileID: 23123598975567556}
+  - component: {fileID: 65813097318418558}
+  - component: {fileID: 114128813647485902}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -109,3 +111,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1385571547280252}
   m_Mesh: {fileID: 4300000, guid: 50b84e8ae6d8d486184549533f5d894a, type: 3}
+--- !u!65 &65813097318418558
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385571547280252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39999998, y: 0.38, z: 0.38}
+  m_Center: {x: 0, y: 0.19, z: 0.009999998}
+--- !u!114 &114128813647485902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385571547280252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea22b9f479c0904080181d26717c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVRPlayer: 0
+  hitsToKill: 10
+  destroyThisWhenKilled: {fileID: 1325766217898272}
+  hitEffectPrefab: {fileID: 1711729450631798, guid: 0c78ec41bf446ca4bb28100e8dceb3b4,
+    type: 2}
+  deathEffectPrefab: {fileID: 1711729450631798, guid: 8c7c6cfa72c60d44aabc1603a457d0fa,
+    type: 2}
+  doShakeOnHit: 1
+  persistentPrefabOnDeath: {fileID: 1755476581627316, guid: 44ec740399aa044929f603e82bd409a3,
+    type: 2}
