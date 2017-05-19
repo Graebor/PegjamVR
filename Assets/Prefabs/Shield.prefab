@@ -123,9 +123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVRPlayer: 0
   hitsToKill: 5
-  destroyThisWhenKilled: {fileID: 0}
+  destroyThisWhenKilled: {fileID: 1499716102193890}
   hitEffectPrefab: {fileID: 0}
   deathEffectPrefab: {fileID: 0}
+  customDieSound: {fileID: 8300000, guid: 6859147c90db34a0eb91a80d9994103a, type: 3}
   doShakeOnHit: 1
   persistentPrefabOnDeath: {fileID: 0}
 --- !u!135 &135180405501350734
