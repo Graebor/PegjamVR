@@ -49,7 +49,7 @@ public class CityGeneration : MonoBehaviour {
     for( int i=0; i< cityBlocksCountWidth; i++ ){
       for( int j=0; j< cityBlocksCountDepth; j++ ){
 
-        currentTempBlock = (Transform) Instantiate(GetRandomBlock(true), currentSpawnLocation, GetRandomRotation());
+        currentTempBlock = (Transform) Instantiate(GetRandomBlock(true), parentTransform.TransformPoint(currentSpawnLocation), GetRandomRotation());
         currentTempBlock.gameObject.name = "CityBlock["+i+"_"+j+"]_" + currentTempBlock.gameObject.name;
 
         currentTempBlock.SetParent(parentTransform);
@@ -76,8 +76,8 @@ public class CityGeneration : MonoBehaviour {
   }
 
 
-  // Get a random city block from the list
-  private Transform GetRandomBlock(bool rotateRandom){
+	// Get a random city block from the list
+	private Transform GetRandomBlock(bool rotateRandom){
     
     Transform tempBlock;
 
