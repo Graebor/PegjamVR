@@ -30,6 +30,9 @@ public class CityGeneration : MonoBehaviour {
   private float maxWidth = 0; // x
   private float maxDepth = 0; // z
 
+	private List<DamageableObject> buildingHitboxes = new List<DamageableObject>();
+	public List<DamageableObject> BuildingHitboxes { get { return buildingHitboxes; } }
+
   private Vector3 currentSpawnLocation = Vector3.zero;
 
 	// Use this for initialization
@@ -53,6 +56,12 @@ public class CityGeneration : MonoBehaviour {
         currentTempBlock.gameObject.name = "CityBlock["+i+"_"+j+"]_" + currentTempBlock.gameObject.name;
 
         currentTempBlock.SetParent(parentTransform);
+
+				DamageableObject[] hitboxes = currentTempBlock.GetComponentsInChildren<DamageableObject>();
+				for (int b=0; b<hitboxes.Length; b++)
+				{
+					buildingHitboxes.Add(hitboxes[b]);
+				}
 
        // currentCity.Add(currentTempBlock);
       
