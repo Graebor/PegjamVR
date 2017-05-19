@@ -54,8 +54,13 @@ MonoBehaviour:
   cityBlockPrefabs:
   - {fileID: 4209499848743132, guid: 1b54572deca6a465db2091ec75387596, type: 2}
   - {fileID: 4571691416965610, guid: 0ec82690934dc438fb9672da4832232f, type: 2}
+  - {fileID: 4887915561011674, guid: d5a97b63e76164d0599bd8acc71e492d, type: 2}
+  - {fileID: 4254630282431190, guid: 92058b5ad089540d596a17bf373ec680, type: 2}
+  - {fileID: 4020803704863726, guid: 99ed3eb10ec904044b1dd36cf1abf73a, type: 2}
+  - {fileID: 4576198249375016, guid: 0e8328342a90c4b6d9c8ab9c1a699b2c, type: 2}
   - {fileID: 4656391955176190, guid: 78e0aefc478e93f4191b29ac78fcd680, type: 2}
   - {fileID: 4101012408278134, guid: 27a861ae7bc98a246a78569887253f62, type: 2}
+  - {fileID: 4833225541291364, guid: fc8ea771cbcfb4a1c87919925b3f05cb, type: 2}
   - {fileID: 4980305239513568, guid: 96c5d20e086124147b5d063318b9b740, type: 2}
   - {fileID: 4519695839479582, guid: 4ef45b6d787274dc7a2a4f5a2ec80a91, type: 2}
   - {fileID: 4527488336991694, guid: 21e946481ca19460b99d35f245313075, type: 2}
@@ -72,7 +77,6 @@ MonoBehaviour:
   - {fileID: 4988105294588904, guid: 383f29247556a4f5787f476a339b08fc, type: 2}
   - {fileID: 4409085083322612, guid: 6db6b968e1689409da652a076d5e5033, type: 2}
   - {fileID: 4445858972558536, guid: fed867bf09ec442f3bf8cfa40fc83900, type: 2}
-  - {fileID: 4785672385705950, guid: d9d1d7b99d99b45c9876e8845721887b, type: 2}
   cityBlocksCountWidth: 10
   cityBlocksCountDepth: 10
   blockSize: 0.5
