@@ -36,6 +36,8 @@ public class DamageableObject : MonoBehaviour
 			Camera.main.Shake();
 		}
 
+		AudioManager.Instance.PlaySound3D("TankBullet", transform.position, 1f, Random.Range(0.8f, 1.2f));
+
 		//-1 hits to kill means it is invincible
 		if (hitsToKill > -1)
 		{

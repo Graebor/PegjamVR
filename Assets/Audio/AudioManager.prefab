@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 243824927779906168, guid: a02cd015349c7a743a9662af7e70e69c,
     type: 2}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 3e85db44f35c2478b9cdeb50f66443f9, type: 3}

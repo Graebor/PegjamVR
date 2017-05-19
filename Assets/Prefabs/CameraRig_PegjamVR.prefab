@@ -1237,6 +1237,8 @@ MonoBehaviour:
     type: 2}
   spawnLocation: {fileID: 4797015759932898}
   bigBulletCooldownLength: 1
+  shootSound: {fileID: 8300000, guid: 01c244fa85cb647ba8044d0c045491d0, type: 3}
+  bigShootSound: {fileID: 8300000, guid: 938a14fb431384a3ab243a0551eac71b, type: 3}
 --- !u!114 &114035557786785660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1417,6 +1419,8 @@ MonoBehaviour:
     type: 2}
   spawnLocation: {fileID: 4422979488190076}
   bigBulletCooldownLength: 1
+  shootSound: {fileID: 8300000, guid: 01c244fa85cb647ba8044d0c045491d0, type: 3}
+  bigShootSound: {fileID: 8300000, guid: 938a14fb431384a3ab243a0551eac71b, type: 3}
 --- !u!114 &114573223760820162
 MonoBehaviour:
   m_ObjectHideFlags: 1

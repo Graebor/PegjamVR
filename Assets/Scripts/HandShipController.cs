@@ -16,6 +16,11 @@ public class HandShipController : MonoBehaviour
 	[SerializeField]
 	private float bigBulletCooldownLength = 1f;
 
+	[SerializeField]
+	private AudioClip shootSound;
+	[SerializeField]
+	private AudioClip bigShootSound;
+
 	private float bigBulletCooldown = 0f;
 
 	private SteamVR_TrackedObject controller;
@@ -50,10 +55,18 @@ public class HandShipController : MonoBehaviour
 
 	private void Fire()
 	{
+		bool isBigBullet = (bigBulletCooldown <= 0f);
+
 		ProjectileController projectile = Instantiate<ProjectileController>(
-			bigBulletCooldown <= 0f ? bigProjectile : projectileToSpawn,
+			isBigBullet ? bigProjectile : projectileToSpawn,
 			spawnLocation.position,
 			spawnLocation.rotation);
+
+		AudioManager.Instance.PlaySound3D(
+				isBigBullet ? bigShootSound : shootSound,
+				transform.position, 1f,
+				Random.Range(0.8f, 1.1f)
+			);
 
 		bigBulletCooldown = bigBulletCooldownLength;
 	}
