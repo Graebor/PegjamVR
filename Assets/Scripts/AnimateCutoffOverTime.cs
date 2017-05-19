@@ -15,7 +15,7 @@ public class AnimateCutoffOverTime : MonoBehaviour {
 	void Update () {
 		float newCutoff = ((timer / time) * range) + startingCutoff;
 		newCutoff = Mathf.Clamp01(newCutoff);
-		Debug.Log(newCutoff);
+		//Debug.Log(newCutoff);
 		r.material.SetFloat("_Cutoff", newCutoff);
 
 		timer += Time.deltaTime;
